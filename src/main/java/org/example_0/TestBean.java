@@ -1,4 +1,4 @@
-package org.example;
+package org.example_0;
 
 public class TestBean {
     String name;

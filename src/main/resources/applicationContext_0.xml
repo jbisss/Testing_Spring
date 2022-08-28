@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="testBean"
-          class="org.example.TestBean">
+          class="org.example_0.TestBean">
         <constructor-arg value="Oleg"/>
     </bean>
 
