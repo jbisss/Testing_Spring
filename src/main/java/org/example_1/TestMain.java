@@ -7,9 +7,11 @@ public class TestMain {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext_1.xml"
         );
-        Music musicBean = context.getBean("musicBean", Music.class);
+        //Music musicBean = context.getBean("musicBean", Music.class);
         // manual dependency injection
-        MusicPlayer musicPlayer = new MusicPlayer(musicBean);
+        //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        // non-manual DI - by the XML configuration
         musicPlayer.playMusic();
         context.close();
     }
