@@ -11,7 +11,8 @@
           class="org.example_1.ClassicalMusic">
     </bean>
     <bean id = "musicPlayer"
-          class = "org.example_1.MusicPlayer">
+          class = "org.example_1.MusicPlayer"
+          scope="prototype">
         <property name="music" ref = "musicBean"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>

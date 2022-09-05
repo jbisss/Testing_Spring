@@ -10,11 +10,15 @@ public class TestMain {
         //Music musicBean = context.getBean("musicBean", Music.class);
         // manual dependency injection
         //MusicPlayer musicPlayer = new MusicPlayer(musicBean);
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        //MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         // non-manual DI - by the XML configuration
-        musicPlayer.playMusic();
-        System.out.println("Name: " + musicPlayer.getName());
-        System.out.println("Volume: " + musicPlayer.getVolume());
+        //musicPlayer.playMusic();
+        //System.out.println("Name: " + musicPlayer.getName());
+        //System.out.println("Volume: " + musicPlayer.getVolume());
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(firstMusicPlayer == secondMusicPlayer);
+        // false - because different objects are created
         context.close();
     }
 }
