@@ -13,6 +13,8 @@ public class TestMain {
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         // non-manual DI - by the XML configuration
         musicPlayer.playMusic();
+        System.out.println("Name: " + musicPlayer.getName());
+        System.out.println("Volume: " + musicPlayer.getVolume());
         context.close();
     }
 }
